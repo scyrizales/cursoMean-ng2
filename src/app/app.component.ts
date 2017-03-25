@@ -11,7 +11,7 @@ class Hero {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Heroes';
+  title = 'Blog';
   newPower = '';
   hero:Hero = { name :'Logan', powers: [] };
   addPower() {
