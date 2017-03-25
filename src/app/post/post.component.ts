@@ -9,6 +9,7 @@ import Post from './post';
 export class PostComponent implements OnInit {
   posts: Post[] = [];
   newPost: Post = { titulo: '', fecha: '', cuerpo: '' };
+  showAutorManager: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -18,5 +19,8 @@ export class PostComponent implements OnInit {
       ...this.newPost
     });
     this.newPost = { titulo: '', fecha: '', cuerpo: '' };
+  }
+  toggleAutores() {
+    this.showAutorManager = !this.showAutorManager;
   }
 }

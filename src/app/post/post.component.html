@@ -7,13 +7,23 @@
     {{post.cuerpo}}
   </md-card-content>
 </md-card>
-<md-input-container>
-  <input type="text" mdInput [(ngModel)]="newPost.titulo" placeholder="Titulo">
-</md-input-container>
-<md-input-container>
-  <input type="date" mdInput [(ngModel)]="newPost.fecha" placeholder="Fecha">
-</md-input-container>
-<md-input-container>
-  <textarea name="" id="" cols="30" rows="10" mdInput="" placeholder="Cuerpo" [(ngModel)]="newPost.cuerpo"></textarea>
-</md-input-container>
-<button (click)="agregar()">Agregar</button>
+<md-card>
+  <md-card-content>
+    <md-input-container>
+      <input type="text" mdInput [(ngModel)]="newPost.titulo" placeholder="Titulo">
+    </md-input-container>
+    <md-input-container>
+      <input type="date" mdInput [(ngModel)]="newPost.fecha" placeholder="Fecha">
+    </md-input-container>
+    <md-input-container>
+      <textarea name="" id="" cols="30" rows="10" mdInput="" placeholder="Cuerpo" [(ngModel)]="newPost.cuerpo"></textarea>
+    </md-input-container>
+    <button (click)="agregar()">Agregar</button>
+  </md-card-content>
+</md-card>
+<div>
+  <button (click)="toggleAutores()">Administrar Autores</button>
+  <div *ngIf="showAutorManager">
+    <autor-manager></autor-manager>
+  </div>
+</div>

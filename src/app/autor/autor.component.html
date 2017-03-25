@@ -1,15 +1,17 @@
-<p>
-  <md-card *ngFor="let autor of autores">
-    <md-card-title>
-      <div>{{autor.nombre}}</div>
-      <p>{{autor.web}}</p>
-    </md-card-title>
-  </md-card>
-  <md-input-container>
-    <input type="text" mdInput [(ngModel)]="nuevoAutor.nombre" placeholder="Nombre">
-  </md-input-container>
-  <md-input-container>
-    <input type="text" mdInput [(ngModel)]="nuevoAutor.web" placeholder="Web">
-  </md-input-container>
-  <button (click)="agregar()">Agregar</button>
-</p>
+<md-card *ngFor="let autor of autores">
+  <md-card-title>
+    <div>{{autor.nombre}}</div>
+    <p>{{autor.web}}</p>
+  </md-card-title>
+</md-card>
+<md-card>
+  <md-card-content>
+    <md-input-container>
+      <input type="text" mdInput [(ngModel)]="nuevoAutor.nombre" placeholder="Nombre">
+    </md-input-container>
+    <md-input-container>
+      <input type="text" mdInput [(ngModel)]="nuevoAutor.web" placeholder="Web">
+    </md-input-container>
+    <button (click)="agregar()">Agregar</button>
+  </md-card-content>
+</md-card>
