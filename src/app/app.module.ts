@@ -11,6 +11,7 @@ import { AutorComponent } from './autor/autor.component';
 import { PostComponent } from './post/post.component';
 
 import { AutorService } from './autor.service';
+import { PostService } from './post.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AutorService } from './autor.service';
     ])
   ],
   providers: [
-    AutorService
+    AutorService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
