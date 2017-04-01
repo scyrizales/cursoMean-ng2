@@ -1,21 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import Post from './post';
+import { PostStore } from './../post-store';
 
 @Component({
   selector: 'post-manager',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
-  posts: Post[] = [];
+export class PostComponent {
   newPost: Post = { titulo: '', fecha: '', cuerpo: '' };
   showAutorManager: boolean = false;
-  constructor() { }
+  constructor(private postStore: PostStore) { }
 
-  ngOnInit() {
-  }
   agregar() {
-    this.posts.push({
+    this.postStore.agregar({
       ...this.newPost
     });
     this.newPost = { titulo: '', fecha: '', cuerpo: '' };

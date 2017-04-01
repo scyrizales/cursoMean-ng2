@@ -1,4 +1,4 @@
-<md-card *ngFor="let autor of autores">
+<md-card *ngFor="let autor of autorStore.autors | async">
   <md-card-title>
     <div>{{autor.nombre}}</div>
     <p>{{autor.web}}</p>

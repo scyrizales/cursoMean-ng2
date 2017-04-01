@@ -1,27 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import Autor from './autor'
 import { AutorService } from './../autor.service';
+import { AutorStore } from './../autor-store';
+import { List } from 'immutable';
 
 @Component({
   selector: 'autor-manager',
   templateUrl: './autor.component.html',
   styleUrls: ['./autor.component.css']
 })
-export class AutorComponent implements OnInit {
-  autores: Autor[] = [];
+export class AutorComponent {
   nuevoAutor: Autor = { nombre: '', web: '' };
-  constructor(private autorService: AutorService) { }
-
-  ngOnInit() {
-    this.autores = this.autorService.get();
-  }
+  constructor(private autorStore: AutorStore) { }
 
   agregar() {
-    this.autorService.add({
+    this.autorStore.add({
       nombre: this.nuevoAutor.nombre,
       web: this.nuevoAutor.web
     });
-    this.autores = this.autorService.get();
     this.nuevoAutor = { nombre: '', web: '' };
   }
 
