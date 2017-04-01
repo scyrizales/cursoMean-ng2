@@ -1,0 +1,22 @@
+<md-card *ngFor="let usuario of usuarioStore.usuarios | async">
+  <md-card-title>
+    {{ usuario.nombre }}
+  </md-card-title>
+  <md-card-content>
+    {{usuario.user}}
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <md-input-container>
+      <input type="text" mdInput [(ngModel)]="nuevoUsuario.nombre" placeholder="Nombre" />
+    </md-input-container>
+    <md-input-container>
+      <input type="text" mdInput [(ngModel)]="nuevoUsuario.user" placeholder="User" />
+    </md-input-container>
+    <md-input-container>
+      <input type="password" mdInput [(ngModel)]="nuevoUsuario.password" placeholder="Password" />
+    </md-input-container>
+    <button (click)="agregar()">Agregar</button>
+  </md-card-content>
+</md-card>

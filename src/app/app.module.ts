@@ -15,12 +15,15 @@ import { AutorService } from './autor.service';
 import { PostService } from './post.service';
 import { AutorStore } from './autor-store';
 import { PostStore } from './post-store';
+import { UsuarioStore } from './usuario-store';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AutorComponent,
-    PostComponent
+    PostComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,10 @@ import { PostStore } from './post-store';
         component: AutorComponent
       },
       {
+        path: 'usuarios',
+        component: UsuarioComponent
+      },
+      {
         path: '',
         redirectTo: '/autors',
         pathMatch: 'full'
@@ -48,7 +55,8 @@ import { PostStore } from './post-store';
     AutorService,
     PostService,
     AutorStore,
-    PostStore
+    PostStore,
+    UsuarioStore
   ],
   bootstrap: [AppComponent]
 })
